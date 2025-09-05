@@ -1,6 +1,6 @@
 FLAGS=	-Wall -Wextra -Werror -fsanitize=address -g3
-NAME=	PhoneBook
-SRC=	contact.cpp	main.cpp PhoneBook.cpp
+NAME=	Megaphone
+SRC=	megaphone.cpp
 OBJ=$(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -8,7 +8,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	c++ $(FLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp PhoneBook.hpp Contact.hpp
+%.o: %.cpp
 	@$ c++ $(FLAGS) -c $< -o $@
 
 clean:
