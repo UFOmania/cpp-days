@@ -1,20 +1,25 @@
 #include <iostream>
-#include <string.h>
+
+#include "PhoneBook.hpp"
+
 
 int main()
 {
-	std::string input;
-	
+	PhoneBook book;
+	std::string line;
+
 	while (1)
 	{
-		std::getline(std::cin, input);
-		if (input.compare("EXIT") == 0)
-			break ;
-		else if(input.compare("ADD") == 0)
-		{
-
-		}
-			
+		if (std::cin.eof())
+			return (EXIT_FAILURE);
+		std::cout << "what are u looking for ??? [ADD] [SEARCH] [EXIT]\n";
+		if (!std::getline(std::cin, line))
+			return (EXIT_FAILURE);
+		if (line == "ADD")
+			book.add_contact();
+		else if (line == "SEARCH")
+			book.view_contacts();
+		else if (line == "EXIT")
+			break;
 	}
-
 }

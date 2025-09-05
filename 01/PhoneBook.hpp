@@ -1,19 +1,22 @@
 #include "Contact.hpp"
+#include <iostream>
+#include <iomanip>
 
 class PhoneBook
 {
 	private:
-		Contact contacts[8];
+		int		_index;
+		Contact	_contacts[8];
+		void	show_all();
 		
 	public:
-		PhoneBook(/* args */);
-		~PhoneBook();
-	};
+		PhoneBook();
+		void	add_contact();
+		void	view_contacts();
+		void	incpect_contact(std::string index);
+		bool	is_valid_index(std::string index);
+		
+};
 
-PhoneBook::PhoneBook(/* args */)
-{
-}
 
-PhoneBook::~PhoneBook()
-{
-}
+
