@@ -92,7 +92,10 @@ void put_cell(std::string str)
 
 void	PhoneBook::show_all()
 {
-	std::cout << std::setw(10) << "index" << "|" << std::setw(10) << "f_name"<< "|" << std::setw(10) << "l_name"<< "|" << std::setw(10) << "nickname"<< "|\n"; 
+	std::cout << std::setw(10) << "index" << "|";
+	std::cout << std::setw(10) << "f_name"<< "|";
+	std::cout << std::setw(10) << "l_name"<< "|";
+	std::cout << std::setw(10) << "nickname"<< "|\n"; 
 	for(int i = 0; i < 8; i++)
 	{
 		std::cout << std::setw(10) << i << "|"; 
