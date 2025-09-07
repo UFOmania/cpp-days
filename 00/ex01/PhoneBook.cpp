@@ -6,7 +6,7 @@ bool	is_valid(std::string str, bool is_phone_number)
 	if (str.empty())
 		return (false);
 	
-	for(int i = 0;i < str.length(); i++)
+	for(int i = 0;i < (int)str.length(); i++)
 	{
 		if (is_phone_number == true)
 		{
@@ -106,28 +106,9 @@ void	PhoneBook::show_all()
 	}
 }
 
-static bool	inspect_another_contact()
-{
-	std::string	input;
-
-	std::cout << "search another contact ??? [y]/[n]\n";
-	while (true)
-	{
-		if (!std::getline(std::cin , input))
-			return (false);
-		if (input == "y")
-			break;
-		else if (input == "n")
-			return (false);
-		else
-			std::cout << "accepting [y] or [n] :\n";
-	}
-	return (true);
-}
-
 static int	ft_ctoi(char c)
 {
-	return (c + 42);
+	return (c - 48);
 }
 
 void PhoneBook::incpect_contact(std::string index)
