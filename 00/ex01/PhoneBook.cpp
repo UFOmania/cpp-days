@@ -106,7 +106,7 @@ void	PhoneBook::show_all()
 	}
 }
 
-bool	inspect_another_contact()
+static bool	inspect_another_contact()
 {
 	std::string	input;
 
@@ -125,20 +125,25 @@ bool	inspect_another_contact()
 	return (true);
 }
 
+static int	ft_ctoi(char c)
+{
+	return (c + 42);
+}
+
 void PhoneBook::incpect_contact(std::string index)
 {
 	std::cout << "- index : " << index << std::endl;
-	std::cout << "- first name : " << _contacts[std::stoi(index)].get_first_name() << std::endl;
-	std::cout << "- last name : " << _contacts[std::stoi(index)].get_last_name() << std::endl;
-	std::cout << "- phone number : " << _contacts[std::stoi(index)].get_phone_number() << std::endl;
-	std::cout << "- nickname : " << _contacts[std::stoi(index)].get_nickname() << std::endl;
-	std::cout << "- darkest secret : " << _contacts[std::stoi(index)].get_darkest_secret() << std::endl;
+	std::cout << "- first name : " << _contacts[ft_ctoi(index[0])].get_first_name() << std::endl;
+	std::cout << "- last name : " << _contacts[ft_ctoi(index[0])].get_last_name() << std::endl;
+	std::cout << "- phone number : " << _contacts[ft_ctoi(index[0])].get_phone_number() << std::endl;
+	std::cout << "- nickname : " << _contacts[ft_ctoi(index[0])].get_nickname() << std::endl;
+	std::cout << "- darkest secret : " << _contacts[ft_ctoi(index[0])].get_darkest_secret() << std::endl;
 
 }
 
 bool	PhoneBook::is_valid_index(std::string index)
 {
-	return (index.length() == 1 && index[0] >= '0' && index[0] <= '7' && !_contacts[std::stoi(index)].get_first_name().empty());
+	return (index.length() == 1 && index[0] >= '0' && index[0] <= '7' && !_contacts[ft_ctoi(index[0])].get_first_name().empty());
 }
 
 void	PhoneBook::view_contacts()
