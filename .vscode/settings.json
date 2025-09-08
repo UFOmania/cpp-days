@@ -60,6 +60,10 @@
 		"type_traits": "cpp",
 		"typeinfo": "cpp",
 		"utility": "cpp",
-		"iomanip": "cpp"
+		"iomanip": "cpp",
+		"zombie.hpp": "c",
+		"deque": "cpp",
+		"fstream": "cpp",
+		"stack": "cpp"
 	}
 }
